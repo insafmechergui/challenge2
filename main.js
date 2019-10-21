@@ -43,16 +43,30 @@ What different attributes computers may have?
 Create two computers object from your factory function and save them in one array called computers!
 
 Note: please write one or two lines here describing your solution.
+
+we create a factory function that return the attributes that the computer can have
+we create two computers from the factory function
+we create an empty array and put the objects inside of it 
+
 */
 
 function makeComputer(type, color, weight) {
-  // TODO: Your code here
+  return {
+  	type: type,
+  	color: color,
+  	weight: weight,
+  };
 }
+var computer1 = makeComputer("DELL1", "red", 1);
+var computer2 = makeComputer("HP", "black", 0.7);
 
+computers = [];
+
+computers = [computer1, computer2];
 // Write a function displayComputer that can be used to display one computer.
 
 function displayComputer(computer) {
-  // TODO: Your code here
+	
 }
 
 //=============================================================================
@@ -68,12 +82,16 @@ Solve it using the most appropriate helper functions(each,map,filter).
 
 Note: please write one or two lines here describing your solution.
 
+we use map because it s returning an array
+we return the element of the array into uppercase
 var strArr = ['hello', 'world', 'whirled', 'peas'];
 uppercaseAll(strArr); ==> [ 'HELLO', 'WORLD', 'WHIRLED', 'PEAS' ]
 */
 
 function uppercaseAll(arrayOfStrings) {
-  // TODO: your code here
+	return map(arrayOfStrings, function(element){
+		return element.toUpperCase();
+	})
 }
 
 //=============================================================================
@@ -88,6 +106,8 @@ Solve it using one of the most appropriate helperthe helpers functions(each,map,
 
 highestPopulation(data); ==> [{country: "China", population: 1409517397},{country: "India", population: 1339180127}]
 Note: please write one or two lines here describing your solution.
+
+we are going to filter the object by the population 
 
 Here’s the data you’ll work with:
 */
@@ -112,7 +132,9 @@ var data = [
 ];
 
 function highestPopulation(arrayOfObjects) {
-  // TODO: your code here
+	return filter(arrayOfObjects, function(element){
+		return element["population"] > 500000000;
+	});
 }
 
 //=============================================================================
@@ -129,10 +151,15 @@ var numsArray = [2, 6, 20, 8, 14];
 halveAll(numsArray); ==> [ 1, 3, 10, 4, 7 ]
 
 Note: please write one or two lines here describing your solution.
+
+we use map to return an array 
+we return the element divided by 2
 */
 
 function halveAll(numbers) {
-  // your code is here
+  return map(numbers, function(element){
+  	return element / 2;
+  });
 }
 
 //=============================================================================
@@ -146,9 +173,14 @@ Solve it using one of the most appropriate helpers functions(each,map,filter).
 values({first : 5, second: 'something' , third : 129}) ==> [5, 'something', 129];
 
 Note: please write one or two lines here describing your solution.
+
+we use map to return an array 
+we return the element that is the object value
 */
 function values(obj) {
-  // TODO: your code here
+	return map(obj, function(element){
+		return element;
+	});
 }
 
 //Good Luck :))
