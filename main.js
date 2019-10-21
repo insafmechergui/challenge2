@@ -54,7 +54,7 @@ function makeComputer(type, color, weight) {
   return {
   	type: type,
   	color: color,
-  	weight: weight,
+  	weight: weight
   };
 }
 var computer1 = makeComputer("DELL1", "red", 1);
